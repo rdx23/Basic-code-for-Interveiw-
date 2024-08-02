@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, r, sum = 0, temp;
+
+    cout << "Enter the Number: ";
+    cin >> n;
+
+    temp = n; // Store the original number
+
+    while (n > 0) {
+        r = n % 10; // Get the last digit
+        sum = sum + (r * r * r); // Add the cube of the digit to sum
+        n = n / 10; // Remove the last digit
+    }
+
+    // Check if the original number is equal to the sum of the cubes of its digits
+    if (temp == sum)
+        cout << "Armstrong Number." << endl;
+    else
+        cout << "Not an Armstrong Number." << endl;
+
+    return 0;
+}
